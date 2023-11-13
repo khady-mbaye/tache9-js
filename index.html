@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tache9-tableaux en JS</title>
+    <style>
+        .box1,
+        .box2 {
+            display: flex;
+            margin: 50px 0;
+
+        }
+
+        input {
+            width: 80px;
+            height: 50px;
+        }
+
+        h2 {
+            margin-right: 15px;
+        }
+
+        button {
+            padding: 5px 10px;
+
+        }
+        #t3 , #t2{
+            font-size: 25px;
+        }
+        .center{
+            text-align: center;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1><u>EXERCICE</u></h1>
+    <h2>soit deux tableaux (tab1 et tab2) de nombre positif et negatif saisis par
+        l'utilisateur :
+    </h2>
+    <p>Écrire un programme permettant de recopier dans tab3 tous les éléments positifs
+        de tab1, et remplacer les éléments de tab2 par des zéros sans utiliser une
+        boucle, et afficher les resultats dans le DOM
+    </p>
+    <p class="center">FIN DE L'EXERCICE</p>
+    <div>
+        <form action="traitement.php">
+            <div class="box1">
+                <h2>Tab1</h2>
+                <input type="text" id="i1">
+                <input type="text" id="i2">
+                <input type="text" id="i3">
+                <input type="text" id="i4">
+                <input type="text" id="i5">
+            </div>
+            <div class="box2">
+                <h2>Tab2</h2>
+                <input type="text" id="i6">
+                <input type="text" id="i7">
+                <input type="text" id="i8">
+                <input type="text" id="i9">
+                <input type="text" id="i10">
+            </div>
+            <button onclick="valider()">Valider</button>
+        </form>
+    </div>
+    <p id="t3"></p>
+    <p id="t2"></p>
+    
+
+    <script>
+        function valider() {
+            var n1 = parseFloat(document.getElementById('i1').value)
+            var n2 = parseFloat(document.getElementById('i2').value)
+            var n3 = parseFloat(document.getElementById('i3').value)
+            var n4 = parseFloat(document.getElementById('i4').value)
+            var n5 = parseFloat(document.getElementById('i5').value)
+            var n6 = parseFloat(document.getElementById('i6').value)
+            var n7 = parseFloat(document.getElementById('i7').value)
+            var n8 = parseFloat(document.getElementById('i8').value)
+            var n9 = parseFloat(document.getElementById('i9').value)
+            var n10 = parseFloat(document.getElementById('i10').value)
+            
+            var tab1 = [n1 , n2 ,n3 , n4 , n5]
+            var tab2 = [n6 , n7 , n8 , n9 , n10]
+
+            for (i = 0; i < tab1.length ; i++) {
+                function test(x) {
+                    return x >= 0
+                }
+
+            }
+            const tab3 = tab1.filter(test)
+            document.getElementById("t3").innerText = tab3
+
+            tab2.splice(0  , 5 , 0,0,0,0,0)
+            document.getElementById("t2").innerText = tab2
+
+        }
+
+
+    </script>
+</body>
+
+</html>
